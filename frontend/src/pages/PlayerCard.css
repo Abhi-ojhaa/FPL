@@ -1,0 +1,96 @@
+.fifa-card {
+  background: linear-gradient(135deg, #fbe29e 60%, #fffbe7 100%);
+  border-radius: 22px 22px 20px 20px/28px 28px 18px 18px;
+  box-shadow:
+    0 2px 8px rgba(0,0,0,0.11),
+    0 0 14px 2px var(--club-accent, #FFD700),
+    0 0 18px 7px #fffbe7aa,
+    0 0 0 1px #e8c760;
+  padding: 17px 12px 13px 12px;
+  width: 180px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: box-shadow 0.2s, transform 0.15s;
+  position: relative;
+  border: 1.5px solid #e8c760;
+  overflow: visible;
+}
+
+.fifa-card::before {
+  display: none !important;
+}
+
+.fifa-card:hover,
+.fifa-card:focus-within {
+  box-shadow:
+    0 7px 18px var(--club-accent, #FFD700),
+    0 0 28px 8px #fffbe7cc,
+    0 2px 8px rgba(0,0,0,0.13);
+  transform: translateY(-2px) scale(1.03);
+  z-index: 2;
+  border-color: var(--club-accent, #FFD700);
+}
+
+.player-pos {
+  font-weight: bold;
+  font-size: 1.18em;
+  color: #8c7c20;
+  margin-bottom: 7px;
+  text-shadow: 0 2px 7px #fff6, 0 1px 2px var(--club-accent, #FFD700);
+  z-index: 2;
+}
+.fifa-card-img {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.fifa-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #111;
+  border: 2px solid #e7d26b;
+  box-shadow: 0 0 10px 2px #fffbe7bb, 0 1px 7px #e7d26b66;
+}
+
+.fifa-card-info {
+  margin-top: 3px;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
+
+.player-name {
+  font-weight: bold;
+  color: #836400;
+  font-size: 1em;
+  margin-bottom: 3px;
+  word-break: break-word;
+  text-shadow: 0 1px 6px #fffbe799, 0 1px 2px var(--club-accent, #FFD700);
+}
+.player-stat-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.92em;
+  margin: 1px 0;
+}
+.player-stat-label {
+  color: #b79c33;
+  margin-right: 3px;
+}
+.player-stat-value {
+  color: #444;
+  font-weight: 600;
+  margin-right: 8px;
+}

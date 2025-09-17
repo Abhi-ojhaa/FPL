@@ -1,0 +1,63 @@
+.golden-navbar {
+  z-index: 2;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5vw;
+  height: var(--navbar-height, 80px);
+  background: transparent;
+  position: relative;
+}
+
+.golden-logo {
+  display: flex;
+  align-items: center;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--gold, #ffd700);
+  letter-spacing: 1.2px;
+  text-shadow: 0 2px 12px #000a;
+  cursor: pointer;
+}
+
+.golden-logo-icon {
+  font-size: 1.3em;
+  margin-right: 7px;
+}
+
+.golden-logo-text {
+  font-weight: 800;
+  color: var(--gold, #ffd700);
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  text-shadow: 0 2px 18px #ffeb3b44;
+}
+
+.golden-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.golden-nav-link {
+  font-size: 1.18rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 22px;
+  border-radius: 9px;
+  background: rgba(25,25,25,0.26);
+  transition: background 0.17s, color 0.13s, box-shadow 0.16s;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.2px;
+  border: none;
+  cursor: pointer;
+}
+.golden-nav-link:hover,
+.golden-nav-link.active {
+  color: var(--gold, #ffd700);
+  background: rgba(255, 215, 0, 0.11);
+  box-shadow: 0 2px 16px #ffd70044;
+}

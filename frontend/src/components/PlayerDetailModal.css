@@ -1,0 +1,30 @@
+.player-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 20, 20, 0.70);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.player-modal {
+  background: #fffbe7;
+  border-radius: 18px;
+  padding: 32px 24px;
+  min-width: 320px;
+  max-width: 95vw;
+  box-shadow: 0 4px 32px #b89c3e33;
+  position: relative;
+  text-align: center;
+  color: #111; 
+}
+.close-btn {
+  position: absolute;
+  right: 18px;
+  top: 14px;
+  border: none;
+  background: transparent;
+  font-size: 2em;
+  color: #b69b2c;
+  cursor: pointer;
+}

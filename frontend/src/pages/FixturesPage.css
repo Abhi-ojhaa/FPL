@@ -1,0 +1,83 @@
+.fixtures-modern-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.fixtures-title {
+  text-align: center;
+  color: #ffe082;
+  margin-bottom: 2.5rem;
+  font-size: 2.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 18px #b89c3e44;
+}
+
+.fixtures-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 26px;
+}
+
+.fixture-card {
+  background: #fffbe7cc;
+  border-radius: 18px;
+  box-shadow: 0 6px 32px -14px #b89c3e33, 0 1px 4px #2222;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.14s, background 0.15s;
+  border: 2.5px solid #c8b45c;
+}
+
+.fixture-card:hover {
+  background: #ffe082ee;
+  box-shadow: 0 12px 36px -10px #b89c3e88, 0 4px 12px #b89c3e22;
+  border-color: #ffe082;
+}
+
+.fixture-kickoff {
+  font-size: 1.08rem;
+  color: #b89c3e;
+  font-weight: 700;
+  margin-bottom: 9px;
+  letter-spacing: 1px;
+}
+
+.fixture-teams {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 1.18rem;
+  font-weight: bold;
+}
+
+.fixture-home, .fixture-away {
+  color: #222;
+}
+
+.fixture-score {
+  color: #b89c3e;
+  font-size: 1.14em;
+}
+
+.fixture-tbd {
+  color: #bbb;
+  font-weight: 500;
+}
+
+.no-fixtures {
+  text-align: center;
+  color: #b89c3e;
+  font-size: 1.25em;
+  padding: 48px 0;
+}
+
+.loading-message,
+.error-message {
+  text-align: center;
+  font-size: 1.15rem;
+  margin: 2rem 0;
+}

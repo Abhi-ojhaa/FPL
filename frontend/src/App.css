@@ -1,0 +1,14 @@
+html, body, #root {
+  background: transparent !important;
+}
+
+
+.detail-container,
+.squad-and-subs,
+.formation-433,
+.subs-column,
+.subs-bar-grid,
+main,
+.app-container {
+
+}

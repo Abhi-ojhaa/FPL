@@ -1,0 +1,60 @@
+.suggestion-table-container {
+  margin: 0 auto;
+  max-width: 100%;
+  overflow-x: auto;
+  max-height: 178px;
+  min-height: 100px;
+  background: none;
+  border-radius: 12px;
+  margin-bottom: 7px;
+  box-shadow: 0 1px 8px #0002;
+}
+
+.suggestion-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: none; /* REMOVE any white background */
+  font-family: inherit;
+  font-size: 0.99rem;
+  color: #eaf8ff;
+}
+
+.suggestion-table th {
+  background: #1a2332; /* dark blue/grey */
+  color: #eaf8ff;
+  font-weight: 900;
+  padding: 7px 7px;
+  border-bottom: 2px solid #263247;
+  font-size: 1.01rem;
+  letter-spacing: 0.5px;
+  text-align: left;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.18s, background 0.18s;
+}
+.suggestion-table th:hover {
+  color: #10b981;
+  background: #23395d;
+}
+
+.suggestion-table td {
+  padding: 7px 7px;
+  color: #eaf8ff;
+  border-bottom: 1px solid #263247;
+  background: #22304a; /* dark, not white! */
+  transition: background 0.18s;
+  font-size: 0.97rem;
+}
+
+.suggestion-table tr:nth-child(even) td {
+  background: #182236;
+}
+
+.suggestion-table tr:hover td {
+  background: #244665;
+}
+
+.suggestion-table tbody tr:last-child td {
+  border-bottom: none;
+}
