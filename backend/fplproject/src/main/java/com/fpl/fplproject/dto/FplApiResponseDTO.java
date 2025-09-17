@@ -30,11 +30,11 @@ public class FplApiResponseDTO {
         this.players = players;
     }
 
-    public List<FplTeamDTO> getTeams() { // Fix: Update return type
+    public List<FplTeamDTO> getTeams() {
         return teams;
     }
 
-    public void setTeams(List<FplTeamDTO> teams) { // Fix: Update parameter type
+    public void setTeams(List<FplTeamDTO> teams) {
         this.teams = teams;
     }
 }

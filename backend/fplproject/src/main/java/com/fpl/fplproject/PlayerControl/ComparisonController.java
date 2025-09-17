@@ -17,8 +17,6 @@ public class ComparisonController {
     private final PlayerService playerService;
     private final PlayerComparisonService playerComparisonService;
 
-    // --- THIS IS THE FIX ---
-    // The constructor name must match the class name.
     @Autowired
     public ComparisonController(PlayerService playerService, PlayerComparisonService playerComparisonService) {
         this.playerService = playerService;

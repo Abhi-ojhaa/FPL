@@ -18,7 +18,6 @@ public class ClubStatsDTO {
     @JsonProperty("points")
     private int points;
 
-    // Inner class for team info
     public static class TeamDTO {
         @JsonProperty("id")
         private long id;
