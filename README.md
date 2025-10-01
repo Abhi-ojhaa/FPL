@@ -1,96 +1,127 @@
-# FPL Hub - Fantasy Premier League Dashboard
+# ⚽ FPL Analytics & Comparison API  
 
-FPL Hub is a comprehensive web application designed for Fantasy Premier League (FPL) enthusiasts. It provides a rich, interactive interface to view player stats, club rosters, season fixtures, and data-driven player suggestions. This application is built with a Java Spring Boot backend and a modern React frontend.
+A **robust backend API** built with **Spring Boot** that provides comprehensive data for **Fantasy Premier League (FPL)**.  
+It fetches and processes live data from the official FPL API and other football data sources, persists it in a **PostgreSQL database**, and exposes it through a clean, well-structured **RESTful API**.
 
-
----
-
-## Features
-
-* **Club Overviews:** Browse all Premier League clubs with key statistics like wins, losses, draws, and points.
-* **Detailed Club Rosters:** View the complete player roster for each club, organized by position (Goalkeeper, Defender, Midfielder, Forward).
-* **Full Season Fixtures:** See a list of all matches for the season, including kickoff times and final scores for completed games.
-* **Player Comparison Engine:** Select any two players to see a head-to-head comparison of their key stats, visualized with a dynamic radar chart.
-* **Player Suggestion Engine:** Get personalized player recommendations based on your desired position and budget.
-* **Live Data Integration:** Player and club data are seeded and synchronized from the official Fantasy Premier League API and the Football-Data.org API.
+The primary goal of this project is to serve as the **data backbone** for a rich FPL analytics frontend, offering:  
+- 🆚 **Player comparisons**  
+- 💰 **Budget-based suggestions**  
+- 🏟️ **Club & fixture information**
 
 ---
 
-## Technical Stack
-
-### Backend
-
-* **Java 17**
-* **Spring Boot 3:** For building the robust REST API.
-* **Spring Data JPA:** For database interactions.
-* **H2 Database (or your preferred DB):** For storing player and club information.
-* **Maven:** For dependency management.
-
-### Frontend
-
-* **React:** For building the user interface.
-* **React Router:** For handling client-side navigation between pages.
-* **Recharts:** For creating interactive charts (like the player comparison radar).
-* **CSS:** For custom styling and layout.
+## 📋 Table of Contents  
+- [🌟 About The Project](#-about-the-project)  
+- [✨ Key Features](#-key-features)  
+- [📡 API Endpoints](#-api-endpoints)  
+- [🛠️ Built With](#️-built-with)  
+- [🏗️ Project Structure](#-project-structure)  
+- [🚀 Getting Started](#-getting-started)  
+  - [⚙️ Prerequisites](#️-prerequisites)  
+  - [💻 Installation](#-installation)  
+- [📬 Contact](#-contact)  
 
 ---
 
-## Core Components
+## 🌟 About The Project  
 
-### Backend Structure
+This project was born out of a passion for **Fantasy Premier League** and the desire to create a powerful, data-centric tool for FPL managers.  
 
-* **Controllers (`/PlayerControl`):** Handle incoming HTTP requests for clubs, players, fixtures, and comparisons.
-* **Services (`/Service`):** Contain the core business logic, such as fetching data from external APIs, synchronizing the database, and processing player comparisons/suggestions.
-* **Repositories (`/PlayerRepo`):** Define the database query methods using Spring Data JPA.
-* **Models (`/model`):** Define the `Player` and `Club` database entities.
-* **DTOs (`/dto`):** Data Transfer Objects used to map incoming data from external APIs.
-* **Data Seeder (`/Seeder`):** An initial process to populate the database with data from the FPL API when the application starts.
+The application is designed with a **multi-layered architecture** that separates:  
+- Data fetching  
+- Persistence  
+- Business logic  
 
-### Frontend Structure
+### Core Functionality  
+- **Data Seeding** → Seeds the database with player and team data from the live FPL API.  
+- **Data Synchronization** → Syncs league standings from *football-data.org* to enrich team data.  
+- **RESTful API** → Exposes structured endpoints to serve data to any frontend application.  
 
-* **Pages (`/pages`):** Top-level React components for each main view of the application (HomePage, ClubsPage, ComparisonPage, etc.).
-* **Components (`/components`):** Reusable UI elements like `ClubCard`, `PlayerCard`, and `PlayerDetailModal`.
-* **Assets (`/assets`):** Static assets like images and SVGs used in the application.
+This project demonstrates backend principles like **API design**, **database management (JPA/Hibernate)**, and **integration with external APIs**.  
+
+---
+
+## ✨ Key Features  
+✔️ **Player Comparison** → Compare two FPL players head-to-head.  
+✔️ **Budget Suggestions** → Get ranked lists of top players within a budget.  
+✔️ **Club & Roster Data** → Detailed info for clubs + player rosters grouped by position.  
+✔️ **Enriched Fixture Lists** → Fixtures with full team names (not just IDs).  
+✔️ **Live Data Integration** → Pulls from both FPL API & football-data.org API.  
+✔️ **Persistent Storage** → PostgreSQL-backed storage for efficiency.  
 
 ---
 
-## Getting Started
+## 📡 API Endpoints  
 
-To get a local copy up and running, follow these simple steps.
+### 🧑‍🤝‍🧑 Players  
+- `GET /api/v1/player` → List all players.  
+- `GET /api/v1/player/name/{playerName}` → Fetch player by name.  
+- `GET /api/v1/player/compare?playerA={name}&playerB={name}` → Compare two players.  
+- `GET /api/v1/player/suggestions?position={pos}&budget={amount}` → Get suggestions.  
 
-### Prerequisites
+### 🏟️ Clubs  
+- `GET /api/v1/clubs` → List all clubs with league stats.  
+- `GET /api/v1/clubs/info/{clubId}` → Fetch club stats.  
+- `GET /api/v1/clubs/{clubId}` → Club roster grouped by position.  
 
-* Java JDK 17 or later
-* Maven
-* Node.js and npm
-* An API key from [football-data.org](https://www.football-data.org/) (for club stats)
-
-### Installation
-
-1.  **Clone the repository:**
-    ```sh
-    git clone [https://github.com/Your-Username/your-repository-name.git](https://github.com/Your-Username/your-repository-name.git)
-    ```
-
-2.  **Configure Backend:**
-    * Navigate to the root of the Java project.
-    * In `src/main/resources/application.properties`, add your football-data.org API key:
-        ```properties
-        football.data.api.key=YOUR_API_KEY_HERE
-        ```
-    * Run the Spring Boot application. It will automatically seed the database on the first run.
-
-3.  **Configure Frontend:**
-    * Navigate to the frontend directory (e.g., `/frontend`).
-    * Install the necessary NPM packages:
-        ```sh
-        npm install
-        ```
-    * Start the React development server:
-        ```sh
-        npm run dev
-        ```
-
-The application should now be running, with the frontend available at `http://localhost:5173` and the backend at `http://localhost:8080`.
+### 📅 Fixtures  
+- `GET /api/v1/fixtures` → Complete, enriched fixture list.  
 
 ---
+
+## 🛠️ Built With  
+- **Framework**: Spring Boot  
+- **Language**: Java 21  
+- **Database**: PostgreSQL  
+- **ORM**: Spring Data JPA / Hibernate  
+- **Build Tool**: Maven  
+
+---
+
+## 🏗️ Project Structure  
+
+src/
+├── model/ # JPA entities (Player, Club)
+├── repository/ # Spring Data JPA repositories
+├── service/ # Business logic layer
+├── controller/ # REST controllers (PlayerController, ClubController, etc.)
+├── dto/ # Data Transfer Objects
+└── seeder/ # CommandLineRunner to seed database
+
+---
+
+## 🚀 Getting Started  
+
+### ⚙️ Prerequisites  
+- Java JDK **21+**  
+- Maven  
+- PostgreSQL instance  
+
+### 💻 Installation  
+
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/Abhi-ojhaa/fpl-analytics-api.git
+   cd fpl-analytics-api
+2.Configure Database
+Edit src/main/resources/application.properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/fpl_data
+spring.datasource.username=your_username
+spring.datasource.password=your_password
+football.data.api.key=your_api_key
+
+3.Run the Application
+mvn spring-boot:run
+App starts on: http://localhost:8080
+
+🎉
+
+📬 Contact
+
+👤 Abhinav Ojha
+🔗 Portfolio: https://github.com/Abhi-ojhaa
+📧 Email: ojhaabhinav18@gmail.com
+
+🔗 Project Link: https://github.com/Abhi-ojhaa/fpl-analytics-api
+
+
